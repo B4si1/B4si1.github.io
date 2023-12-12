@@ -1,0 +1,61 @@
+header {
+  background-color: #333;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
+  display: flex;
+  align-items: center;
+}
+
+.align-items {
+  display: flex;
+  align-items: baseline;
+}
+
+.logo {
+  height: 45px;
+  width: 35px;
+}
+
+.title {
+  margin-top: 0px;
+  padding-bottom: 1px;
+  padding-left: 2px;
+}
+
+.nav {
+  background-color: #333;
+  color: whitesmoke;
+  text-align: center;
+  padding: 5px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+  background-color: rgb(135, 131, 131);
+}
+
+.content {
+  padding-top: 3px;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+h1 {
+  margin: 0;
+}
+
+.link {
+  color: yellowgreen;
+}
+
+.nolink {
+  color: whitesmoke;
+}
+
+/*# sourceMappingURL=styles.css.map */
