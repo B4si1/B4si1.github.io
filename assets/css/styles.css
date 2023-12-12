@@ -47,7 +47,9 @@ body {
 }
 
 h1 {
-  margin: 0;
+  text-align: center;
+  margin-top: 20px;
+  color: whitesmoke;
 }
 
 .link {
@@ -56,6 +58,61 @@ h1 {
 
 .nolink {
   color: whitesmoke;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+li {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  color: rgb(135, 131, 131);
+}
+
+a:hover {
+  color: yellowgreen;
+}
+
+p {
+  color: #444;
+}
+
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.post-content h1 {
+  margin-top: 0;
+  color: rgb(135, 131, 131);
+}
+
+.post-content p {
+  margin-bottom: 15px;
+}
+
+.post-content p.sign {
+  font-weight: bold;
+  color: rgb(135, 131, 131);
 }
 
 /*# sourceMappingURL=styles.css.map */
