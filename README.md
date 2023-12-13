@@ -14,7 +14,7 @@
 
 ---
 
-- ** Done** :
+- **Done** :
 
 	- 12/12/23
 	- Rework homepage
