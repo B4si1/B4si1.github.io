@@ -8,16 +8,16 @@
 
 - **Working** :
     - Smarten website (can't really finish this)
-    - Jekyll (Ruby) - Learn (can't really finish this)
+    - Jekyll (Ruby) - Learn 
     - Finish Jekyll Tutorial
-    - Homepage link coloring
-
+    
 ---
 
 - **Done** :
 
 	- 12/12/23
 	- Rework homepage
+	- Homepage link coloring
 	- Github
 		- Upload only essential files and folders to GitHub pages..
 	- 11/12/23
