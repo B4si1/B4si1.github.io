@@ -5,6 +5,7 @@
 - Jekyll (Ruby) - Learn (can't really finish this)
 - Finish Jekyll Tutorial
 - Create post tagging system (instead of authors?)
+- Comment more!
 
 ---
 

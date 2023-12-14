@@ -115,4 +115,8 @@ p {
   color: rgb(135, 131, 131);
 }
 
+.ignore-css {
+  all: initial !important;
+}
+
 /*# sourceMappingURL=styles.css.map */
