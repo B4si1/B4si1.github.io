@@ -1,0 +1,117 @@
+{
+  "properties_for_sale": [
+    {
+      "property_id": 1,
+      "property_type": "House",
+      "address": {
+        "street": "789 Rainbow Blvd",
+        "city": "Fantasyville",
+        "state": "MAG",
+        "zip_code": "56789"
+      },
+      "price": 320000,
+      "bedrooms": 4,
+      "bathrooms": 3,
+      "size_sqft": 2400,
+      "description": "Enchanting house surrounded by magical gardens and whimsical decor.",
+      "image_url": "../assets/images/property-images/1 (1).png"
+    },
+    {
+      "property_id": 2,
+      "property_type": "Apartment",
+      "address": {
+        "street": "222 Pixie Lane",
+        "city": "Wonderland",
+        "state": "MYS",
+        "zip_code": "98765"
+      },
+      "price": 180000,
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "size_sqft": 1200,
+      "description": "Charming apartment in a mystical setting with views of magical creatures.",
+      "image_url": "../assets/images/property-images/1 (4).png"
+    },
+    {
+      "property_id": 3,
+      "property_type": "House",
+      "address": {
+        "street": "1 Dragon's Keep",
+        "city": "Mythica",
+        "state": "LEG",
+        "zip_code": "24680"
+      },
+      "price": 1000000,
+      "bedrooms": 8,
+      "bathrooms": 6,
+      "size_sqft": 10000,
+      "description": "Legendary castle offering an adventure-filled living experience with secret passageways and breathtaking views.",
+      "image_url": "../assets/images/property-images/1 (2).png"
+    },
+    {
+      "property_id": 4,
+      "property_type": "Land",
+      "address": {
+        "street": "101 Tree Top Lane",
+        "city": "Nature's Haven",
+        "state": "WON",
+        "zip_code": "13579"
+      },
+      "price": 80000,
+      "bedrooms": 1,
+      "bathrooms": 1,
+      "size_sqft": 500,
+      "description": "Quaint treehouse nestled in the woods, perfect for a serene getaway among the trees.",
+      "image_url": "../assets/images/property-images/1 (7).png"
+    },
+    {
+      "property_id": 5,
+      "property_type": "Appartment",
+      "address": {
+        "street": "77 Sunset Way",
+        "city": "Dreamlandia",
+        "state": "FAN",
+        "zip_code": "54321"
+      },
+      "price": 500000,
+      "bedrooms": 5,
+      "bathrooms": 4,
+      "size_sqft": 3500,
+      "description": "Exquisite villa offering panoramic views of fantasy landscapes and celestial skies.",
+      "image_url": "../assets/images/property-images/1 (5).png"
+    },
+    {
+      "property_id": 6,
+      "property_type": "House",
+      "address": {
+        "street": "500 Gold Street",
+        "city": "Treasure Cove",
+        "state": "RIC",
+        "zip_code": "12345"
+      },
+      "price": 1500000,
+      "bedrooms": 10,
+      "bathrooms": 8,
+      "size_sqft": 15000,
+      "description": "Opulent mansion adorned with treasures and luxury, fit for royalty.",
+      "image_url": "../assets/images/property-images/1 (3).png"
+    },
+    {
+      "property_id": 7,
+      "property_type": "Land",
+      "address": {
+        "street": "99 Lullaby Lane",
+        "city": "Imagination Cove",
+        "state": "DRE",
+        "zip_code": "67890"
+      },
+      "price": 120000,
+      "bedrooms": 2,
+      "bathrooms": 1.5,
+      "size_sqft": 1200,
+      "description": "Whimsical cottage with a garden filled with dreams and tranquility.",
+      "image_url": "../assets/images/property-images/1 (8).png"
+    }
+    
+  ]
+}

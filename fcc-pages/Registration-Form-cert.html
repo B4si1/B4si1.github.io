@@ -6,8 +6,36 @@
     <link rel="stylesheet" href="..\assets\css\fcc-registrationform-cert.css" />
   </head>
   <body>
-    <h1>Registration Form Certification</h1>
+    <h1 id="title">Survey Form Title</h1>
+  <p id="description">Survey Description placeholder</p>
+  <form method="post" id="survey-form" action="#">
+        <section id="basic-info">
+          <label id="name-label" for="name"> Name<input id="name" type="text" name="name" placeholder="Your name..." required /></label>
+          <label id="email-label" for="email">Email<input id="email" type="email" name="email" placeholder="Your email..." required /></label>
+          <label id="number-label" for="number">Age<input id="number" type="number" min="13" max="120" name="age" placeholder="Age..." required />Gender</label>
+          <label for="gender"> 
+            <select id="dropdown" name="dropdown">
+              <option value="">(gender at birth)</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </label>
+          <hr>
+          <label for="buyer">Buyer : <input type="radio" value="buyer" id="buyer" name="account-type" checked></label>
+          <label for="seller">Seller : <input type="radio" value="seller" id="seller" name="account-type"></label>
+          <hr>
+          <label for="extra">Extra time? : <input type="checkbox" value="extra" id="extra" name="account-type" ></label>
+          <label for="night">Night shift? : <input type="checkbox" value="night" id="night" name="account-type" ></label>
+          <hr>
+          <label for="bio"></label>
+          <textarea id="bio" name="bio" placeholder="Your other information or bio..."></textarea>
+        </section>
+        <input id="submit" type="submit" value="Submit" />
+      </form>
   </body>
+
+
+
 <hr>
   <a href="/fcc-revisions.html"><h3>Back</h3></a>
 <hr>
