@@ -7,6 +7,7 @@
     <link rel="icon" href="/assets/images/Based Logo.png" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/images/Based Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="\assets\css\cookies.css">
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="B4si1" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>BAsi1 - FCC Revisions | B4si1</title>
@@ -26,8 +27,8 @@
     <title>BAsi1 - FCC Revisions</title>
   </head>
   <main>
-  <body>
-    <div class="nav"><nav>
+    <body>
+      <div class="nav"><nav>
   <header>
     <div id="animated-lines" class="align-items">
       <a href="/"><h1 class="title">BASIL</h1></a>
@@ -40,15 +41,13 @@
     
       <a href="/projects.html" class="nolink">Projects </a> |
     
-      <a href="/aigenerations.html" class="nolink">Ai Image Generations </a> |
-    
     <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#209124', 'Z8Z2SVNVP');kofiwidget2.draw();</script> 
 </nav>
 
 </div>
-    <div class="content">
-    <style>
-    img{
+      <div class="content">
+        <style>
+    .arrowicon{
         width:20px;
         height:15px;
         
@@ -64,7 +63,7 @@
 <p><br /></p>
 <form>
     <fieldset>
-    <legend><img id="arrowIcon" src="..\assets\images\arrowdown.png" /> Basic Level Tutorials</legend>
+    <legend class="legend"><img class="arrowicon" src="..\assets\images\arrowdown.png" /> Basic Level Tutorials</legend>
     <div id="contentToToggle" style="display: none;">
         <h2>1) <a href="fcc-pages\CatPhotoApp.html" style="color: yellowgreen;">Cat Photo App</a> - 69/69 : Complete</h2>
         <hr />
@@ -90,7 +89,7 @@
 
 <form>
     <fieldset>
-    <legend><img id="arrowIcon" src="..\assets\images\arrowdown.png" /> Intermediate Level Tutorials </legend>
+    <legend><img class="arrowicon" src="..\assets\images\arrowdown.png" /> Intermediate Level Tutorials </legend>
     <div id="contentToToggle" style="display: none;">
         <h2>1) <a href="#" style="color: yellowgreen;">Placeholder</a> - -/- : N/A</h2>
         <p> - ...  </p>
@@ -103,7 +102,7 @@
 
 <form>
     <fieldset>
-    <legend><img id="arrowIcon" src="..\assets\images\arrowdown.png" /> Advanced Level Tutorials </legend>
+    <legend><img class="arrowicon" src="..\assets\images\arrowdown.png" /> Advanced Level Tutorials </legend>
     <div id="contentToToggle" style="display: none;">
         <h2>1) <a href="#" style="color: yellowgreen;">Placeholder</a> - -/- : N/A</h2>
         <p> - ...  </p>
@@ -113,7 +112,22 @@
 </form>
 
 
-    </div>
-  <main>
-  </body>
+      </div>
+      <div class="popup" id="popup">
+        <div class="popup-content">
+          <div class="cookie-container">
+            <img class="cookie" src="/assets/images/cookie.png" alt="Cookie Image">
+            <h2>cookies?</h2>
+            <img class="cookie" src="/assets/images/cookie.png" alt="Cookie Image">
+          </div>
+            <p>.. but are you ok for me to eat them?</p>
+            <button id="acceptcookie" onclick="acceptandclose()">Accept</button>
+            <button id="denycookie" onclick="denyandclose()">Deny</button>
+            <button id="denycookie" onclick="denyandredirect()">Deny and Redirect</button>
+          </div>
+        </div>
+      </div>
+      <script src="\assets\js\cookies.js"></script>
+    </body>
+</main>
 </html>

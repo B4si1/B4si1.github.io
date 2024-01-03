@@ -7,6 +7,7 @@
     <link rel="icon" href="/assets/images/Based Logo.png" type="image/x-icon">
     <link rel="shortcut icon" href="/assets/images/Based Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="\assets\css\cookies.css">
     <link type="application/atom+xml" rel="alternate" href="/feed.xml" title="B4si1" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Liquid | B4si1</title>
@@ -28,8 +29,8 @@
     <title>Liquid</title>
   </head>
   <main>
-  <body>
-    <div class="nav"><nav>
+    <body>
+      <div class="nav"><nav>
   <header>
     <div id="animated-lines" class="align-items">
       <a href="/"><h1 class="title">BASIL</h1></a>
@@ -42,14 +43,12 @@
     
       <a href="/projects.html" class="nolink">Projects </a> |
     
-      <a href="/aigenerations.html" class="nolink">Ai Image Generations </a> |
-    
     <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#209124', 'Z8Z2SVNVP');kofiwidget2.draw();</script> 
 </nav>
 
 </div>
-    <div class="content">
-    <br>
+      <div class="content">
+        <br>
 <div class="post-content">
 <h1 style="text-transform: capitalize;">Liquid</h1>
 <p>Liquid is a versatile templating language primarily used for dynamic content generation within web applications, particularly within systems like Jekyll, Shopify, and other content management or e-commerce platforms. Here’s a summary covering its key features, uses, and limitations..</p>
@@ -86,7 +85,22 @@
 
 <p class="sign">13 Dec 2023 - Basi1 (chatgpt)</p>
 </div>
-    </div>
-  <main>
-  </body>
+      </div>
+      <div class="popup" id="popup">
+        <div class="popup-content">
+          <div class="cookie-container">
+            <img class="cookie" src="/assets/images/cookie.png" alt="Cookie Image">
+            <h2>cookies?</h2>
+            <img class="cookie" src="/assets/images/cookie.png" alt="Cookie Image">
+          </div>
+            <p>.. but are you ok for me to eat them?</p>
+            <button id="acceptcookie" onclick="acceptandclose()">Accept</button>
+            <button id="denycookie" onclick="denyandclose()">Deny</button>
+            <button id="denycookie" onclick="denyandredirect()">Deny and Redirect</button>
+          </div>
+        </div>
+      </div>
+      <script src="\assets\js\cookies.js"></script>
+    </body>
+</main>
 </html>
