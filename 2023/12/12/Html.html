@@ -27,6 +27,9 @@
 <!-- End Jekyll SEO tag -->
 
     <title>Html</title>
+
+    <link rel="stylesheet" href="assets\css\cursor.css">
+  
   </head>
   <main>
     <body>
@@ -49,6 +52,27 @@
 </div>
       <div class="content">
         <br>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: none; 
+  }
+  *{
+    cursor: none;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .popup{
+    z-index:9998;
+  }
+</style>
 <div class="post-content">
 <h1 style="text-transform: capitalize;">Html</h1>
 <p>HTML (HyperText Markup Language) is the standard language used to create web pages and define their structure. It consists of a series of elements that tell web browsers how to display content. HTML uses tags to denote different types of content, such as headings, paragraphs, images, links, forms, and more.</p>
@@ -72,6 +96,7 @@
 <p class="sign">12 Dec 2023 - Basi1 (chatgpt)</p>
 </div>
       </div>
+      <canvas id="glowCanvas"></canvas>
       <div class="popup" id="popup">
         <div class="popup-content">
           <div class="cookie-container">
@@ -87,6 +112,7 @@
         </div>
       </div>
       <script src="\assets\js\cookies.js"></script>
+      <script src="\assets\js\cursor.js"></script>
     </body>
 </main>
 </html>

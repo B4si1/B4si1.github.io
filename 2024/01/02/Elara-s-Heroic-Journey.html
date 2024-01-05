@@ -27,6 +27,9 @@
 <!-- End Jekyll SEO tag -->
 
     <title>Elara’s heroic journey</title>
+
+    <link rel="stylesheet" href="assets\css\cursor.css">
+  
   </head>
   <main>
     <body>
@@ -49,6 +52,27 @@
 </div>
       <div class="content">
         <br>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: none; 
+  }
+  *{
+    cursor: none;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .popup{
+    z-index:9998;
+  }
+</style>
 <div class="post-content">
 <h1 style="text-transform: capitalize;">Elara’s heroic journey</h1>
 <p>In a land veiled by mist and legend, there existed the Kingdom of Arlandia, nestled between towering mountains and glistening lakes. Its history whispered of brave knights, enchanting sorcery, and an ancient prophecy that foretold of a destined hero.</p>
@@ -103,6 +127,7 @@
 <p class="sign">02 Jan 2024 - Basi1 (chatgpt)</p>
 </div>
       </div>
+      <canvas id="glowCanvas"></canvas>
       <div class="popup" id="popup">
         <div class="popup-content">
           <div class="cookie-container">
@@ -118,6 +143,7 @@
         </div>
       </div>
       <script src="\assets\js\cookies.js"></script>
+      <script src="\assets\js\cursor.js"></script>
     </body>
 </main>
 </html>

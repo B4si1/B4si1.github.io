@@ -27,6 +27,9 @@
 <!-- End Jekyll SEO tag -->
 
     <title>Css</title>
+
+    <link rel="stylesheet" href="assets\css\cursor.css">
+  
   </head>
   <main>
     <body>
@@ -49,6 +52,27 @@
 </div>
       <div class="content">
         <br>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: none; 
+  }
+  *{
+    cursor: none;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .popup{
+    z-index:9998;
+  }
+</style>
 <div class="post-content">
 <h1 style="text-transform: capitalize;">Css</h1>
 <p>CSS, which stands for Cascading Style Sheets, is a fundamental component of web design and development. It is a styling language used to describe the presentation and layout of HTML (Hypertext Markup Language) and XML (eXtensible Markup Language) documents, defining how elements are displayed on webpages.</p>
@@ -62,6 +86,7 @@
 <p class="sign">11 Dec 2023 - Basi1 (chatgpt)</p>
 </div>
       </div>
+      <canvas id="glowCanvas"></canvas>
       <div class="popup" id="popup">
         <div class="popup-content">
           <div class="cookie-container">
@@ -77,6 +102,7 @@
         </div>
       </div>
       <script src="\assets\js\cookies.js"></script>
+      <script src="\assets\js\cursor.js"></script>
     </body>
 </main>
 </html>

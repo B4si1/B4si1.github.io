@@ -27,6 +27,9 @@
 <!-- End Jekyll SEO tag -->
 
     <title>Javascript</title>
+
+    <link rel="stylesheet" href="assets\css\cursor.css">
+  
   </head>
   <main>
     <body>
@@ -49,6 +52,27 @@
 </div>
       <div class="content">
         <br>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: none; 
+  }
+  *{
+    cursor: none;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .popup{
+    z-index:9998;
+  }
+</style>
 <div class="post-content">
 <h1 style="text-transform: capitalize;">Javascript</h1>
 <p>JavaScript is a high-level, interpreted programming language primarily used for front-end web development. It allows developers to add interactivity, manipulate content, and control the behavior of web pages. Here’s a summary of JavaScript’s uses and limitations:</p>
@@ -84,6 +108,7 @@ Client-side Security: As JavaScript code executes on the client-side, it can be 
 <p class="sign">28 Dec 2023 - Basi1 (chatgpt)</p>
 </div>
       </div>
+      <canvas id="glowCanvas"></canvas>
       <div class="popup" id="popup">
         <div class="popup-content">
           <div class="cookie-container">
@@ -99,6 +124,7 @@ Client-side Security: As JavaScript code executes on the client-side, it can be 
         </div>
       </div>
       <script src="\assets\js\cookies.js"></script>
+      <script src="\assets\js\cursor.js"></script>
     </body>
 </main>
 </html>

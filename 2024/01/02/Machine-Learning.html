@@ -27,6 +27,9 @@
 <!-- End Jekyll SEO tag -->
 
     <title>Machine learning</title>
+
+    <link rel="stylesheet" href="assets\css\cursor.css">
+  
   </head>
   <main>
     <body>
@@ -49,6 +52,27 @@
 </div>
       <div class="content">
         <br>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    cursor: none; 
+  }
+  *{
+    cursor: none;
+  }
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  .popup{
+    z-index:9998;
+  }
+</style>
 <div class="post-content">
 <h1 style="text-transform: capitalize;">Machine learning</h1>
 <p>Machine learning is a subset of artificial intelligence (AI) that involves the development of algorithms and statistical models that enable computer systems to improve their performance on a task without being explicitly programmed. It is based on the idea that systems can learn from data, identify patterns, make decisions, and improve over time with minimal human intervention.</p>
@@ -69,6 +93,7 @@
 <p class="sign">02 Jan 2024 - Basi1 (chatgpt)</p>
 </div>
       </div>
+      <canvas id="glowCanvas"></canvas>
       <div class="popup" id="popup">
         <div class="popup-content">
           <div class="cookie-container">
@@ -84,6 +109,7 @@
         </div>
       </div>
       <script src="\assets\js\cookies.js"></script>
+      <script src="\assets\js\cursor.js"></script>
     </body>
 </main>
 </html>
