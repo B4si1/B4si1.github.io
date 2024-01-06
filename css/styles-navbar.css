@@ -1,0 +1,26 @@
+.navbar {
+  position: fixed;
+  bottom: 10px; 
+  right: 10px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.navbar a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.navbar a img {
+  width: 25px; 
+  height: auto;
+}
+
+.navbar a img:hover {
+  transform: translate(0, -10%);
+  box-shadow: 1px 0px 20px yellowgreen;
+  border-radius: 50px;
+}
