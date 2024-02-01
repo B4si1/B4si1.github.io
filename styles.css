@@ -93,9 +93,20 @@ body {
     color: #333;
     padding-bottom: 10px;
   }
+  .content h3 {
+    color: #333;
+    padding-bottom: 10px;
+  }
   
   .content p {
     color: #666;
+    padding-bottom: 10px;
+  }
+  .content iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
   }
 
   label {
