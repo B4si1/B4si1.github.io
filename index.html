@@ -1,70 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <link rel="icon" href="images/leaf.png" type="image/x-icon">
-      <link rel="stylesheet" href="css/styles-main.css">
-      <link rel="stylesheet" href="css/styles-glow.css">
-      <link rel="stylesheet" href="css/styles-cookie.css">
-      <link rel="stylesheet" href="css/styles-bars.css">
-      <link rel="stylesheet" href="css/styles-image.css">
-      <link rel="stylesheet" href="css/styles-navbar.css">
-        
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas1"></canvas>
+    <canvas id="canvas2"></canvas>
     
-    <title>
-        Basil Web App 
-    </title>
+    <div class="container">
+        <header>
+          <h1>Basil</h1>
+          <p>HTML & JavaScript Developer</p>
+        </header>
+    
+        <div class="portfolio-container">
+          <div class="content">
+            <h2>Weather App</h2>
+            <a href="https://app.netlify.com/sites/basilweatherapp" target="_blank">
+                <img src="https://api.netlify.com/api/v1/badges/2954a715-76ad-4113-9e92-1953e3639062/deploy-status" alt="Netlify Status">
+            </a>
+            <label for="cityInput">Enter City:</label>
+            <input type="text" id="cityInput" placeholder="E.g., New York">
+            <button onclick="getWeather()">Get Weather</button>
 
-    <styles>
-      <!-- Test styles here-->
-    </styles>
+            <div id="weatherInfo"></div>
 
-
-    <body>
-      
-      <div class="image-container"><img src="images/leaf.png" alt="Moving Image" id="movingImage"></div>
-      
-      <div class="navbar">
-        <a href="#"><img src="images/githu_icon.png" alt="Github"></a>
-        <a href="#"><img src="images/battle_net_icon.png" alt="Battle Net"></a>
-        <a href="#"><img src="images/code_pen_icon.png" alt="Code Pen"></a>
-        <a href="#"><img src="images/discord_icon.png" alt="Discord"></a>
-        <a href="#"><img src="images/ko_fi_icon.png" alt="Ko-Fi"></a>
-        <a href="#"><img src="images/free_code_camp_icon.png" alt="Free Code Camp"></a>
-      </div>
-        
-      <div class="content">
-            <div class="container"> 
-              <h1>Basil Web App - <span class="fire">Firebase</span></h1>
-              <p id="typed-text"></p> <!-- i would like this p to have a typed on effect -->
-            </div>
-        </div>
-        
-        <canvas id="glowCanvas"></canvas>
-        
-        <div class="popup" id="popup">
-            <div class="popup-content">
-              <div class="cookie-container">
-                <img class="cookie" src="images/cookie.png" alt="Cookie Image">
-                <h2>cookies?</h2>
-                <img class="cookie" src="images/cookie.png" alt="Cookie Image">
-              </div>
-                <p>.. but are you ok for me to eat them?</p>
-                <button id="acceptcookie" onclick="acceptandclose()">Accept</button>
-                <button id="denycookie" onclick="denyandclose()">Deny</button>
-                <button id="denycookie" onclick="denyandredirect()">Deny and Redirect</button>
-              </div>
-            </div>
           </div>
-        
-        <script src="js/script-glow.js"></script>
-        <script src="js/script-cookie.js"></script>
-        <script src="js/script-typer.js"></script>
-        <script src="js/script-moveimage.js"></script>
-        
-        <script>
-          // Test scripts here
-        </script>
     
-    </body>
+          <div class="content">
+            
+            <h2>Sprite Art</h2>
+            
+            <p>Sprite art for javascript game</p>
+          </div>
+          
+          <!-- Add more content divs for additional projects 
+          <footer>
+            <p>&copy; 2024 Basil</p><a href="www.google.com" target="_blank">Here Here</a>
+          </footer>-->
+        </div>
+    </div>
+    <!-- Franks Labs : https://www.youtube.com/@Frankslaboratory -->
+    <script src="scripts.js"></script>
+    <script src="weatherscript.js"></script>
+</body>
 </html>
