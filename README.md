@@ -1,4 +1,8 @@
-Basil Portfolio Page
+# Basil Portfolio Page
 
-[x] - Upload 3.x
-[ ] - Cleean up directory
+- [ ] Clean up directory
+- [ ] Fix resize cursor reload
+
+- [x] Upload 3.x
+
+
