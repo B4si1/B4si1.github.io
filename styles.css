@@ -125,6 +125,14 @@ body {
   #weatherInfo {
     margin-top: 20px;
   }
+  svg{
+    height: 40px;
+    width: auto;
+    fill: #45a049;
+  }
+  svg:hover{
+    fill: #54d45b;
+  }
   
   /*footer {
     background-color: #333;
