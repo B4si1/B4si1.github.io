@@ -6,10 +6,10 @@ function getWeather() {
   const city = cityInput.value;
 
   if (city === '') {
-    alert('Please enter a city.');
+    showErrorPopup('Please enter a city!');
     return;
-  }
-
+}
+  
   const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}&include=minutely`;
 
   fetch(apiUrl)
@@ -29,6 +29,15 @@ function getWeather() {
     })
     .catch(error => {
       console.error('Error fetching weather data:', error);
-      alert('Error fetching weather data. Please try again.');
+      showErrorPopup('Error fetching weather data. Please try again.');
     });
+
+    function showErrorPopup(message) {
+      const errorText = document.getElementById('errorText');
+      errorText.textContent = message;
+      const errorPopup = document.getElementById('errorPopup');
+      errorPopup.style.display = 'block';
+  }
+
+    
 }

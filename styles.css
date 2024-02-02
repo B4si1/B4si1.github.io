@@ -21,6 +21,7 @@
 }
 
 a{
+    text-decoration: none;
     z-index: 99;
 }
 
@@ -61,6 +62,7 @@ body {
     border-radius: 20px;
     border: 1px solid rgba(6, 255, 27, 0.089);
   }
+  
   header:hover{
     text-shadow: 0px 0px 2px #03a810;
   }
@@ -179,3 +181,25 @@ body {
   }
   
   
+  #errorPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-left: 4px solid red;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    
+}
+
+#closePopup {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10;
+}

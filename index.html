@@ -11,6 +11,7 @@
     <canvas id="canvas1"></canvas>
     <canvas id="canvas2"></canvas>
     
+    
     <div class="container">
         <header>
           <h1>Basil</h1>
@@ -57,6 +58,11 @@
           
       
         </div>
+        <div id="errorPopup" onclick='closeErrorPopup()'>
+          <span id="closePopup" onclick='closeErrorPopup()'>&times;</span> <!-- this onclick does not call function-->
+          <h2 id="errorText"></h2>
+        </div>
+        
         <header>
           <a href="https://github.com/B4si1" target="_blank">
             <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="438.549px" height="438.549px" viewBox="0 0 438.549 438.549" style="enable-background:new 0 0 438.549 438.549;" xml:space="preserve">
@@ -99,14 +105,18 @@
             </g>
          </svg>
         </a>
-        
-       
-        
-          
+ 
         </header>
     </div>
-    <!-- Franks Labs : https://www.youtube.com/@Frankslaboratory -->
+    
     <script src="scripts.js"></script>
     <script src="weatherscript.js"></script>
+    <script>
+        function closeErrorPopup() {
+          const errorPopup = document.getElementById('errorPopup');
+          errorPopup.style.display = 'none';
+        }
+      // this isnt working from in the external weatherscript.js?
+    </script>
 </body>
 </html>
