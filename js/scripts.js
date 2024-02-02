@@ -1,59 +1,57 @@
-/*const apiKey = 'd848a96993e640fe8c765333c5ad09ac';
+const apiKey = '9d52832445de4d18b0c152812240202';
+const cityInput = document.getElementById('cityInput');
+const weatherInfo = document.getElementById('weatherInfo');
+const city = cityInput.value;
 
-function onloadWeather(){
-    const cityInput = document.getElementById('cityInput');
-    const weatherInfo = document.getElementById('weatherInfo');
-    const city = cityInput.value;
+function onLoadWeather(){
+     
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Rome&aqi=no`)
+    .then(response => response.json())
+    .then(data => {
+      const location = data.location;
+      const currentWeather = data.current;
 
-    fetch('https://api.weatherbit.io/v2.0/current?city=rome&key='+apiKey+'&include=minutely')
-      .then(response => response.json())
-      .then(data => {
-        const weatherData = data.data[0];
-  
-        const weatherHTML = `
-          <h2>${weatherData.city_name}, ${weatherData.country_code}</h2>
-          <p>Temperature: ${weatherData.temp}°C</p>
-          <p>Weather: ${weatherData.weather.description}</p>
-          <p>Humidity: ${weatherData.rh}%</p>
-          <p>Wind: ${weatherData.wind_spd} m/s, ${weatherData.wind_cdir_full}</p>
-        `;
-  
-        weatherInfo.innerHTML = weatherHTML;
-        console.log(weatherData);
-      })
-      
-}
+      const weatherHTML = `
+        <h2>${location.name}, ${location.country}</h2>
+        <p>Temperature: ${currentWeather.temp_c}°C</p>
+        <p>Weather: ${currentWeather.condition.text}</p>
+        <img src="${currentWeather.condition.icon}" alt="Weather Icon">
+        <p>Humidity: ${currentWeather.humidity}%</p>
+        <p>Wind: ${currentWeather.wind_kph} km/h, ${currentWeather.wind_dir}</p>
+      `;
 
-onloadWeather()
+      weatherInfo.innerHTML = weatherHTML;
+    })
+};
+
+onLoadWeather();
 
 function getWeather() {
     
-    const cityInput = document.getElementById('cityInput');
-    const weatherInfo = document.getElementById('weatherInfo');
-    const city = cityInput.value;
-  
+    
     if (city === '') {
       alert('Please enter a city.');
       return;
     }
   
-    const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}&include=minutely`;
-  
+    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
     fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        const weatherData = data.data[0];
-  
-        const weatherHTML = `
-          <h2>${weatherData.city_name}, ${weatherData.country_code}</h2>
-          <p>Temperature: ${weatherData.temp}°C</p>
-          <p>Weather: ${weatherData.weather.description}</p>
-          <p>Humidity: ${weatherData.rh}%</p>
-          <p>Wind: ${weatherData.wind_spd} m/s, ${weatherData.wind_cdir_full}</p>
-        `;
-  
-        weatherInfo.innerHTML = weatherHTML;
-      })
+    .then(response => response.json())
+    .then(data => {
+      const location = data.location;
+      const currentWeather = data.current;
+
+      const weatherHTML = `
+        <h2>${location.name}, ${location.country}</h2>
+        <p>Temperature: ${currentWeather.temp_c}°C</p>
+        <p>Weather: ${currentWeather.condition.text}</p>
+        <img src="${currentWeather.condition.icon}" alt="Weather Icon">
+        <p>Humidity: ${currentWeather.humidity}%</p>
+        <p>Wind: ${currentWeather.wind_kph} km/h, ${currentWeather.wind_dir}</p>
+      `;
+
+      weatherInfo.innerHTML = weatherHTML;
+    })
       .catch(error => {
         console.error('Error fetching weather data:', error);
         alert('Error fetching weather data. Please try again.');
@@ -61,7 +59,8 @@ function getWeather() {
       
   }
 
-*/
+
+
 //Values from weather API to use as adjustments to style
 
 
