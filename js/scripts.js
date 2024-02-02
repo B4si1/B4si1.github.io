@@ -1,6 +1,89 @@
+/*const apiKey = 'd848a96993e640fe8c765333c5ad09ac';
+
+function onloadWeather(){
+    const cityInput = document.getElementById('cityInput');
+    const weatherInfo = document.getElementById('weatherInfo');
+    const city = cityInput.value;
+
+    fetch('https://api.weatherbit.io/v2.0/current?city=rome&key='+apiKey+'&include=minutely')
+      .then(response => response.json())
+      .then(data => {
+        const weatherData = data.data[0];
+  
+        const weatherHTML = `
+          <h2>${weatherData.city_name}, ${weatherData.country_code}</h2>
+          <p>Temperature: ${weatherData.temp}°C</p>
+          <p>Weather: ${weatherData.weather.description}</p>
+          <p>Humidity: ${weatherData.rh}%</p>
+          <p>Wind: ${weatherData.wind_spd} m/s, ${weatherData.wind_cdir_full}</p>
+        `;
+  
+        weatherInfo.innerHTML = weatherHTML;
+        console.log(weatherData);
+      })
+      
+}
+
+onloadWeather()
+
+function getWeather() {
+    
+    const cityInput = document.getElementById('cityInput');
+    const weatherInfo = document.getElementById('weatherInfo');
+    const city = cityInput.value;
+  
+    if (city === '') {
+      alert('Please enter a city.');
+      return;
+    }
+  
+    const apiUrl = `https://api.weatherbit.io/v2.0/current?city=${city}&key=${apiKey}&include=minutely`;
+  
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const weatherData = data.data[0];
+  
+        const weatherHTML = `
+          <h2>${weatherData.city_name}, ${weatherData.country_code}</h2>
+          <p>Temperature: ${weatherData.temp}°C</p>
+          <p>Weather: ${weatherData.weather.description}</p>
+          <p>Humidity: ${weatherData.rh}%</p>
+          <p>Wind: ${weatherData.wind_spd} m/s, ${weatherData.wind_cdir_full}</p>
+        `;
+  
+        weatherInfo.innerHTML = weatherHTML;
+      })
+      .catch(error => {
+        console.error('Error fetching weather data:', error);
+        alert('Error fetching weather data. Please try again.');
+      });
+      
+  }
+
+*/
+//Values from weather API to use as adjustments to style
+
+
+//Rain
+console.log('DEBUG LOG: ' + Math.floor(Math.random() * 10));
+if((Math.floor(Math.random() * 10)) < 5){
+    gradientFill1 = 'grey' //blue
+    gradientFill2 = 'blue' // white
+    pointerFill = 'white' // yellow
+}else{
+    gradientFill1 = 'orange' //blue
+    gradientFill2 = 'yellow' // white
+    pointerFill = 'grey' // yellow
+}
+//sun
+
+
 // Setup canvas and context :
 // Get the reference to the HTML canvas element with the id 'canvas1'
 const canvas = document.getElementById('canvas1');
+
+canvas.style.background = `radial-gradient(${gradientFill1}, ${gradientFill2})`;
 const canvas2 = document.getElementById('canvas2');
 // Get the 2D rendering context of the canvas, which allows drawing on it
 const ctx = canvas.getContext('2d');
@@ -24,9 +107,9 @@ function drawpointer() {
     ctx2.clearRect(0, 0, canvas.width, canvas.height);
     ctx2.beginPath();
     ctx2.arc(mouseX, mouseY, 10, 0, Math.PI * 2);
-    ctx2.shadowColor = 'yellowgreen';
+    ctx2.shadowColor = pointerFill;
     ctx2.shadowBlur = 20;
-    ctx2.fillStyle = 'yellowgreen';
+    ctx2.fillStyle = pointerFill;
     ctx2.fill();
   
     requestAnimationFrame(drawpointer);
@@ -39,8 +122,8 @@ function drawpointer() {
 // Create a linear gradient for the canvas background, starting from (0, 0) to (canvas.width, canvas.height)
 const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
 // Add color stops to the gradient: starting with a greenish color, transitioning to black at the middle, and ending with the same greenish color
-gradient.addColorStop(0, 'black');
-gradient.addColorStop(1, 'yellowgreen');
+gradient.addColorStop(0, gradientFill1);
+gradient.addColorStop(1, gradientFill2);
 // Set the canvas fill style to the created gradient
 ctx.fillStyle = gradient;
 // Set the stroke style (outline color) for shapes drawn on the canvas to the greenish color
@@ -224,9 +307,9 @@ class Effect {
 
         // Update gradient based on new dimensions
         const gradient = this.context.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0,'black');
+        gradient.addColorStop(0,gradientFill1);
         //gradient.addColorStop(0.5,'black');
-        gradient.addColorStop(1,'yellowgreen');
+        gradient.addColorStop(1,gradientFill2);
         this.context.fillStyle = gradient;
         this.context.strokeStyle = gradient;
 
@@ -246,9 +329,9 @@ class Effect {
             ctx2.clearRect(0, 0, canvas.width, canvas.height);
             ctx2.beginPath();
             ctx2.arc(mouseX, mouseY, 10, 0, Math.PI * 2);
-            ctx2.shadowColor = 'yellowgreen';
+            ctx2.shadowColor = pointerFill;
             ctx2.shadowBlur = 20;
-            ctx2.fillStyle = 'yellowgreen';
+            ctx2.fillStyle = pointerFill;
             ctx2.fill();
           
             requestAnimationFrame(drawpointer);
