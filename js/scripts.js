@@ -1,82 +1,107 @@
 const apiKey = '9d52832445de4d18b0c152812240202';
 const cityInput = document.getElementById('cityInput');
 const weatherInfo = document.getElementById('weatherInfo');
-const city = cityInput.value;
 
-function onLoadWeather(){
-     
-    fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Rome&aqi=no`)
+gradientFill1 = 'black';
+gradientFill2 = 'white';
+pointerFill = 'white';
+
+function renderWeather(data) {
+  const location = data.location;
+  const currentWeather = data.current;
+
+  const weatherHTML = `
+    <h2>${location.name}, ${location.country}</h2>
+    <p>Temperature: ${currentWeather.temp_c}°C</p>
+    <p>Weather: ${currentWeather.condition.text}</p>
+    <img src="${currentWeather.condition.icon}" alt="Weather Icon">
+    <p>Humidity: ${currentWeather.humidity}%</p>
+    <p>Wind: ${currentWeather.wind_kph} km/h, ${currentWeather.wind_dir}</p>
+  `;
+
+  weatherInfo.innerHTML = weatherHTML;
+
+  // Values from weather API to use as adjustments to style
+  const palettes = [
+    {
+        name: "Clear",
+        gradientFill1: 'red',
+        gradientFill2: 'green',
+        pointerFill: 'blue'
+    },
+    {
+        name: "Overcast",
+        gradientFill1: 'grey',
+        gradientFill2: 'yellowgreen',
+        pointerFill: 'yellow'
+    },
+  ];
+
+  
+
+
+
+  for (let i = 0; i < palettes.length; i++) {
+    console.log('entered for loop...');
+    console.log(palettes[i].name + " " + currentWeather.condition.text);
+    if (palettes[i].name === currentWeather.condition.text) {
+        console.log("entered if...")
+        console.log(palettes[i].name + " " + currentWeather.condition.text);
+        gradientFill1 = palettes[i].gradientFill1;
+        gradientFill2 = palettes[i].gradientFill2;
+        pointerFill = palettes[i].pointerFill;
+    }else{
+        console.log('entered else..');
+        gradientFill1 = 'black';
+        gradientFill2 = 'white';
+        pointerFill = 'white';
+    }
+  }
+
+ 
+
+  // Update the canvas background gradient
+  canvas.style.background = `radial-gradient(${gradientFill1}, ${gradientFill2})`;
+
+  // Redraw the pointer with the updated fill color
+  drawpointer();
+}
+
+
+
+function onLoadWeather() {
+  fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Rome&aqi=no`)
     .then(response => response.json())
     .then(data => {
-      const location = data.location;
-      const currentWeather = data.current;
-
-      const weatherHTML = `
-        <h2>${location.name}, ${location.country}</h2>
-        <p>Temperature: ${currentWeather.temp_c}°C</p>
-        <p>Weather: ${currentWeather.condition.text}</p>
-        <img src="${currentWeather.condition.icon}" alt="Weather Icon">
-        <p>Humidity: ${currentWeather.humidity}%</p>
-        <p>Wind: ${currentWeather.wind_kph} km/h, ${currentWeather.wind_dir}</p>
-      `;
-
-      weatherInfo.innerHTML = weatherHTML;
+      renderWeather(data);
     })
-};
+    .catch(error => {
+      console.error('Error fetching weather data:', error);
+      alert('Error fetching weather data. Please try again.');
+    });
+}
 
 onLoadWeather();
 
 function getWeather() {
-    
-    
-    if (city === '') {
-      alert('Please enter a city.');
-      return;
-    }
-  
-    const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
-    fetch(apiUrl)
-    .then(response => response.json())
-    .then(data => {
-      const location = data.location;
-      const currentWeather = data.current;
+  const city = cityInput.value;
 
-      const weatherHTML = `
-        <h2>${location.name}, ${location.country}</h2>
-        <p>Temperature: ${currentWeather.temp_c}°C</p>
-        <p>Weather: ${currentWeather.condition.text}</p>
-        <img src="${currentWeather.condition.icon}" alt="Weather Icon">
-        <p>Humidity: ${currentWeather.humidity}%</p>
-        <p>Wind: ${currentWeather.wind_kph} km/h, ${currentWeather.wind_dir}</p>
-      `;
-
-      weatherInfo.innerHTML = weatherHTML;
-    })
-      .catch(error => {
-        console.error('Error fetching weather data:', error);
-        alert('Error fetching weather data. Please try again.');
-      });
-      
+  if (city === '') {
+    alert('Please enter a city.');
+    return;
   }
 
-
-
-//Values from weather API to use as adjustments to style
-
-
-//Rain
-console.log('DEBUG LOG: ' + Math.floor(Math.random() * 10));
-if((Math.floor(Math.random() * 10)) < 5){
-    gradientFill1 = 'grey' //blue
-    gradientFill2 = 'blue' // white
-    pointerFill = 'white' // yellow
-}else{
-    gradientFill1 = 'orange' //blue
-    gradientFill2 = 'yellow' // white
-    pointerFill = 'grey' // yellow
-}
-//sun
-
+  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      renderWeather(data);
+    })
+    .catch(error => {
+      console.error('Error fetching weather data:', error);
+      alert('Error fetching weather data. Please try again.');
+    });
+};
 
 // Setup canvas and context :
 // Get the reference to the HTML canvas element with the id 'canvas1'
