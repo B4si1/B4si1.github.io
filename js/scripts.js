@@ -375,3 +375,10 @@ function animate() {
 
 // Start the animation loop
 animate();
+
+
+// Add resize event listener to update canvas size
+window.addEventListener('resize', () => {
+    canvas2.width = window.innerWidth;
+    canvas2.height = window.innerHeight;
+  });
