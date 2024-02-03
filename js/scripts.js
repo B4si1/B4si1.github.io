@@ -1,6 +1,109 @@
-// Setup canvas and context :
+const apiKey = '9d52832445de4d18b0c152812240202';
+const cityInput = document.getElementById('cityInput');
+const weatherInfo = document.getElementById('weatherInfo');
+
+gradientFill1 = 'black';
+gradientFill2 = 'grey';
+pointerFill = 'yellowgreen';
+
+function renderWeather(data) {
+  const location = data.location;
+  const currentWeather = data.current;
+
+  const weatherHTML = `
+    <h2>${location.name}, ${location.country}</h2>
+    <p>Temperature: ${currentWeather.temp_c}°C</p>
+    <p>Weather: ${currentWeather.condition.text}</p>
+    <img src="${currentWeather.condition.icon}" alt="Weather Icon">
+    <p>Humidity: ${currentWeather.humidity}%</p>
+    <p>Wind: ${currentWeather.wind_kph} km/h, ${currentWeather.wind_dir}</p>
+  `;
+
+  weatherInfo.innerHTML = weatherHTML;
+
+  // Values from weather API to use as adjustments to style
+  const palettes = [
+    {
+        name: "Clear",
+        gradientFill1: '#cdf5f5',
+        gradientFill2: '#287bf8',
+        pointerFill: '#d0d8e3'
+    },
+    {
+        name: "Partly cloudy",
+        gradientFill1: '#babab6',
+        gradientFill2: '#f5f5f1',
+        pointerFill: '#037675'
+    },
+    {
+        name: "Overcast",
+        gradientFill1: '#7f9bc5',
+        gradientFill2: '#7e7f81',
+        pointerFill: '#d2d5db'
+    },
+  ];
+
+  for (let i = 0; i < palettes.length; i++) {
+    if (palettes[i].name === currentWeather.condition.text) {
+        gradientFill1 = palettes[i].gradientFill1;
+        gradientFill2 = palettes[i].gradientFill2;
+        pointerFill = palettes[i].pointerFill;
+
+        gradient.addColorStop(0, gradientFill1);
+        gradient.addColorStop(1, gradientFill2);
+        
+    }
+    
+}
+
+ 
+
+  // Update the canvas background gradient
+  canvas.style.background = `radial-gradient(${gradientFill1}, ${gradientFill2})`;
+
+  // Redraw the pointer with the updated fill color
+  drawpointer();
+}
+
+function onLoadWeather() {
+  fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Rome&aqi=no`)
+    .then(response => response.json())
+    .then(data => {
+      renderWeather(data);
+    })
+    .catch(error => {
+      console.error('Error fetching weather data:', error);
+      alert('Error fetching weather data. Please try again.');
+    });
+}
+
+onLoadWeather();
+
+function getWeather() {
+  const city = cityInput.value;
+
+  if (city === '') {
+    alert('Please enter a city.');
+    return;
+  }
+
+  const apiUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      renderWeather(data);
+    })
+    .catch(error => {
+      console.error('Error fetching weather data:', error);
+      alert('Error fetching weather data. Please try again.');
+    });
+};
+
+    // Setup canvas and context :
 // Get the reference to the HTML canvas element with the id 'canvas1'
 const canvas = document.getElementById('canvas1');
+
+canvas.style.background = `radial-gradient(${gradientFill1}, ${gradientFill2})`;
 const canvas2 = document.getElementById('canvas2');
 // Get the 2D rendering context of the canvas, which allows drawing on it
 const ctx = canvas.getContext('2d');
@@ -18,29 +121,31 @@ let mouseY = 0;
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
+});
   
 function drawpointer() {
     ctx2.clearRect(0, 0, canvas.width, canvas.height);
     ctx2.beginPath();
     ctx2.arc(mouseX, mouseY, 10, 0, Math.PI * 2);
-    ctx2.shadowColor = 'yellowgreen';
+    ctx2.shadowColor = pointerFill;
     ctx2.shadowBlur = 20;
-    ctx2.fillStyle = 'yellowgreen';
+    ctx2.fillStyle = pointerFill;
     ctx2.fill();
   
     requestAnimationFrame(drawpointer);
-  }
+};
   
-  drawpointer();
+drawpointer();
   
 
 
 // Create a linear gradient for the canvas background, starting from (0, 0) to (canvas.width, canvas.height)
 const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
 // Add color stops to the gradient: starting with a greenish color, transitioning to black at the middle, and ending with the same greenish color
-gradient.addColorStop(0, 'black');
-gradient.addColorStop(1, 'yellowgreen');
+gradient.addColorStop(0, gradientFill1);
+console.log("gfill1: " + gradientFill1);
+gradient.addColorStop(1, gradientFill2);
+console.log("gfill1: " + gradientFill2);
 // Set the canvas fill style to the created gradient
 ctx.fillStyle = gradient;
 // Set the stroke style (outline color) for shapes drawn on the canvas to the greenish color
@@ -224,9 +329,9 @@ class Effect {
 
         // Update gradient based on new dimensions
         const gradient = this.context.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0,'black');
+        gradient.addColorStop(0,gradientFill1);
         //gradient.addColorStop(0.5,'black');
-        gradient.addColorStop(1,'yellowgreen');
+        gradient.addColorStop(1,gradientFill2);
         this.context.fillStyle = gradient;
         this.context.strokeStyle = gradient;
 
@@ -246,9 +351,9 @@ class Effect {
             ctx2.clearRect(0, 0, canvas.width, canvas.height);
             ctx2.beginPath();
             ctx2.arc(mouseX, mouseY, 10, 0, Math.PI * 2);
-            ctx2.shadowColor = 'yellowgreen';
+            ctx2.shadowColor = pointerFill;
             ctx2.shadowBlur = 20;
-            ctx2.fillStyle = 'yellowgreen';
+            ctx2.fillStyle = pointerFill;
             ctx2.fill();
           
             requestAnimationFrame(drawpointer);
