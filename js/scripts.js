@@ -23,24 +23,12 @@ function renderWeather(data) {
 
   // Values from weather API to use as adjustments to style
   const palettes = [
-    {
-        name: "Clear",
-        gradientFill1: '#cdf5f5',
-        gradientFill2: '#287bf8',
-        pointerFill: '#d0d8e3'
-    },
-    {
-        name: "Partly cloudy",
-        gradientFill1: '#babab6',
-        gradientFill2: '#f5f5f1',
-        pointerFill: '#037675'
-    },
-    {
-        name: "Overcast",
-        gradientFill1: '#7f9bc5',
-        gradientFill2: '#7e7f81',
-        pointerFill: '#d2d5db'
-    },
+    { name: "Clear", gradientFill1: '#cdf5f5', gradientFill2: '#287bf8', pointerFill: '#d0d8e3'},
+    { name: "Partly cloudy", gradientFill1: '#babab6', gradientFill2: '#f5f5f1', pointerFill: '#037675'},
+    { name: "Overcast", gradientFill1: '#7f9bc5', gradientFill2: '#7e7f81', pointerFill: '#d2d5db'},
+    { name: "Light drizzle", gradientFill1: '#80e6ff', gradientFill2: '#0180a0', pointerFill: '#d2d5db'},
+    { name: "Light rain", gradientFill1: '#80e6ff', gradientFill2: '#0180a0', pointerFill: '#d2d5db'},
+    { name: "Mist", gradientFill1: '#ffffff', gradientFill2: '#ffffff', pointerFill: '#d2d5db'},
   ];
 
   for (let i = 0; i < palettes.length; i++) {
