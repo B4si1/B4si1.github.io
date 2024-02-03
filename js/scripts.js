@@ -38,19 +38,14 @@ function renderWeather(data) {
   ];
 
   for (let i = 0; i < palettes.length; i++) {
-    console.log('entered for loop...');
-    console.log(palettes[i].name + " " + currentWeather.condition.text);
     if (palettes[i].name === currentWeather.condition.text) {
-        console.log("entered if...")
-        console.log(palettes[i].name + " " + currentWeather.condition.text);
         gradientFill1 = palettes[i].gradientFill1;
         gradientFill2 = palettes[i].gradientFill2;
         pointerFill = palettes[i].pointerFill;
 
         gradient.addColorStop(0, gradientFill1);
-        console.log("gfill1: " + gradientFill1);
         gradient.addColorStop(1, gradientFill2);
-        console.log("gfill1: " + gradientFill2);
+        
     }
 }
 
