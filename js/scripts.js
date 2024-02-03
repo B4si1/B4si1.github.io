@@ -3,8 +3,8 @@ const cityInput = document.getElementById('cityInput');
 const weatherInfo = document.getElementById('weatherInfo');
 
 gradientFill1 = 'black';
-gradientFill2 = 'white';
-pointerFill = 'white';
+gradientFill2 = 'grey';
+pointerFill = 'yellowgreen';
 
 function renderWeather(data) {
   const location = data.location;
@@ -25,15 +25,21 @@ function renderWeather(data) {
   const palettes = [
     {
         name: "Clear",
-        gradientFill1: 'red',
-        gradientFill2: 'green',
-        pointerFill: 'blue'
+        gradientFill1: '#cdf5f5',
+        gradientFill2: '#287bf8',
+        pointerFill: '#d0d8e3'
+    },
+    {
+        name: "Partly cloudy",
+        gradientFill1: '#babab6',
+        gradientFill2: '#f5f5f1',
+        pointerFill: '#037675'
     },
     {
         name: "Overcast",
-        gradientFill1: 'orange',
-        gradientFill2: 'yellowgreen',
-        pointerFill: 'yellow'
+        gradientFill1: '#7f9bc5',
+        gradientFill2: '#7e7f81',
+        pointerFill: '#d2d5db'
     },
   ];
 
@@ -47,6 +53,7 @@ function renderWeather(data) {
         gradient.addColorStop(1, gradientFill2);
         
     }
+    
 }
 
  
