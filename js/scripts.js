@@ -31,15 +31,11 @@ function renderWeather(data) {
     },
     {
         name: "Overcast",
-        gradientFill1: 'grey',
+        gradientFill1: 'orange',
         gradientFill2: 'yellowgreen',
         pointerFill: 'yellow'
     },
   ];
-
-  
-
-
 
   for (let i = 0; i < palettes.length; i++) {
     console.log('entered for loop...');
@@ -50,13 +46,13 @@ function renderWeather(data) {
         gradientFill1 = palettes[i].gradientFill1;
         gradientFill2 = palettes[i].gradientFill2;
         pointerFill = palettes[i].pointerFill;
-    }else{
-        console.log('entered else..');
-        gradientFill1 = 'black';
-        gradientFill2 = 'white';
-        pointerFill = 'white';
+
+        gradient.addColorStop(0, gradientFill1);
+        console.log("gfill1: " + gradientFill1);
+        gradient.addColorStop(1, gradientFill2);
+        console.log("gfill1: " + gradientFill2);
     }
-  }
+}
 
  
 
@@ -66,8 +62,6 @@ function renderWeather(data) {
   // Redraw the pointer with the updated fill color
   drawpointer();
 }
-
-
 
 function onLoadWeather() {
   fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=Rome&aqi=no`)
@@ -103,7 +97,7 @@ function getWeather() {
     });
 };
 
-// Setup canvas and context :
+    // Setup canvas and context :
 // Get the reference to the HTML canvas element with the id 'canvas1'
 const canvas = document.getElementById('canvas1');
 
@@ -125,7 +119,7 @@ let mouseY = 0;
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
+});
   
 function drawpointer() {
     ctx2.clearRect(0, 0, canvas.width, canvas.height);
@@ -137,9 +131,9 @@ function drawpointer() {
     ctx2.fill();
   
     requestAnimationFrame(drawpointer);
-  }
+};
   
-  drawpointer();
+drawpointer();
   
 
 
@@ -147,7 +141,9 @@ function drawpointer() {
 const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
 // Add color stops to the gradient: starting with a greenish color, transitioning to black at the middle, and ending with the same greenish color
 gradient.addColorStop(0, gradientFill1);
+console.log("gfill1: " + gradientFill1);
 gradient.addColorStop(1, gradientFill2);
+console.log("gfill1: " + gradientFill2);
 // Set the canvas fill style to the created gradient
 ctx.fillStyle = gradient;
 // Set the stroke style (outline color) for shapes drawn on the canvas to the greenish color

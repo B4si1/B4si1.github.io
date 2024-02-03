@@ -2,6 +2,7 @@
 
 - [ ] Fix resize cursor reload
 - [ ] add light/darkmode
+- [ ] add weathers
 
 - [x] working branch
 - [x] Clean up directory
