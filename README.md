@@ -1,4 +1,4 @@
-# Basil Portfolio Page
+# Basil Web Page
 
 - [ ] Put the pointer on the same canvas as the particles
 - [ ] Add light/darkmode
